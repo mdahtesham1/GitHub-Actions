@@ -1,0 +1,18 @@
+name: fan-out-fan-in
+on: push
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo " Lint step"
+
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo " unit-tests cases "
+
+  package:
+    runs-on: ubuntu-latest
+    needs: [lint, unit-tests]
+    steps:
+      - run: echo " package application "

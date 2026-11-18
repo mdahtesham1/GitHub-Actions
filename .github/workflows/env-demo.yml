@@ -1,0 +1,16 @@
+name: env workflow
+on: push
+env:
+  APP_NAME: journey
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      LOG_LEVEL: info
+    steps:
+      - name: print env variables
+        run: echo "$APP_NAME with $LOG_LEVEL"
+      - name: Print steps env
+        env:
+          LOG_LEVEL: debug
+        run: echo "$APP_NAME with step env $LOG_LEVEL"

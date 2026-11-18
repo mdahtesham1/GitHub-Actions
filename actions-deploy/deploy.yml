@@ -1,0 +1,11 @@
+name: Deploy-Application
+on: push
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+      - name: create deployment directory
+        run: sudo mkdir -p /opt/pixelpost
+      - name: copy the file
+        run: sudo cp /root/actions-deploy/version.txt /opt/pixelpost

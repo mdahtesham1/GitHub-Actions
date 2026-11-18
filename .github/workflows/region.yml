@@ -1,0 +1,8 @@
+name: Repository variable
+on: push
+jobs:
+  region:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Printing the Repository variables
+        run: echo "DEPLOY_REGION value is ${{ vars.DEPLOY_REGION}}"

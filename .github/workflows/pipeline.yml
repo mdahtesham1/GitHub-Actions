@@ -1,0 +1,5 @@
+name: caller
+on: push
+jobs:
+  checks:
+    uses: ./.github/workflows/checks.yml

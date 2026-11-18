@@ -1,0 +1,11 @@
+name: announce
+description: this is the composite action
+inputs:
+  app-name:
+    description: Name of the app being build
+    required: true
+runs:
+  using: composite
+  steps:
+    - run: echo " building the app name ${{ inputs.app-name }}"
+      shell: bash
